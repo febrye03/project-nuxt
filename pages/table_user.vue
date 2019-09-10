@@ -108,7 +108,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapGetters } from 'vuex'
 
 export default {
     data: () => ({
@@ -171,7 +171,11 @@ export default {
     computed: {
       ...mapState({
         nomor: state => state.tabel.nomor,
+        // items: state => state.tabel.items,
       }),
+      ...mapGetters('tabel', [
+        'formTitle'
+      ]),
       formTitle () {
         return this.editedIndex === -1 ? 'New User' : 'Edit User'
       },
@@ -192,8 +196,8 @@ export default {
     },
     methods: {
       ...mapMutations('tabel', [
-        'savexxx',
-        'tambah'
+        'tambah',
+        'initialize',
       ]),
       initialize () {
         this.items = [
