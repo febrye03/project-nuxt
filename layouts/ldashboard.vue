@@ -159,6 +159,10 @@ export default {
               {
                 title: 'kalkulator',
                 to:'/kalkulator'
+              },
+              {
+                title: 'todo',
+                to:'/todo'
               }
             ],
           },
