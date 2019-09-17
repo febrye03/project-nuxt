@@ -33,11 +33,11 @@ export const mutations = {
         const noEdit = std.noEdit
         const namaEdit = std.namaEdit
         const deskripsiEdit = std.deskripsiEdit
-
         const idx = state.items.findIndex((val) => {
             return val.no === noEdit
         })
-        state.items[idx].namaEdit = namaEdit
-        state.items[idx].deskripsiEdit = deskripsiEdit
+        state.items[idx].nama = namaEdit
+        state.items[idx].deskripsi = deskripsiEdit
+
     }
 }

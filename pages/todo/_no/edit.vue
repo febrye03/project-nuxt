@@ -57,37 +57,26 @@ export default {
     },
 
     created (){
-      //console.log(this.items)
       const idx = this.items.findIndex((val) => {
         return val.no === parseInt(this.$route.params.no)
         })
-        // console.log(this.$route.params.no)
-      //   console.log(idx)
       this.namaEdit = this.items[idx].nama
       this.deskripsiEdit = this.items[idx].deskripsi
-      console.log(this.namaEdit)
-      console.log(this.items[idx].namaEdit)
-      //this.items.findIndex(idx)
-     // this.idx = this.items.findIndex(idx)
-      // this.items[idx].namaEdit = 'namaEdit'
-      // this.items[idx].deskripsiEdit = 'deskripsiEdit'
-      // this.noEdit = this.$route.params.no
-      // this.deskripsiEdit = this.items[idx].deskripsiEdit
-      // this.namaEdit = this.items[idx].namaEdit
       },
 
     methods:{
     ...mapMutations('todo', [
       'edit'
       ]),
-      sunting () {
+      sunting (item) {
         const std = {
-          noEdit: this.$route.params.no,
+          noEdit: parseInt(this.$route.params.no),
           namaEdit: (this.namaEdit),
           deskripsiEdit: (this.deskripsiEdit)
         }
         this.edit(std)
-        this.$router.change('/todo')
+        this.$router.push('/todo')
+        
       }
 
     },
