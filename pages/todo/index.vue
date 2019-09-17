@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
   export default {
     data: () => ({
       headers: [
@@ -75,40 +77,38 @@
           sortable: false 
         },
       ],
-      items: [],
+      // items: [],
       editedIndex: -1,
       editedItem: {
       },
     }),
 
     computed: {
-
-    },
-
-    created () {
-      this.initialize()
+    ...mapState({
+      items: state => state.todo.items,      
+      }),
     },
 
     methods: {
-      initialize () {
-        this.items = [
-          {
-            no: 1,
-            nama: 'todo 1',
-            deskripsi: 'asal',
-          },
-          {
-            no: 2,
-            nama: 'todo 2',
-            deskripsi: 'asal',
-          },
-          {
-            no: 3,
-            nama: 'todo 3',
-            deskripsi: 'asal',
-          },
-        ]
-      },
+      // initialize () {
+      //   this.items = [
+      //     {
+      //       no: 1,
+      //       nama: 'todo 1',
+      //       deskripsi: 'asal',
+      //     },
+      //     {
+      //       no: 2,
+      //       nama: 'todo 2',
+      //       deskripsi: 'asal',
+      //     },
+      //     {
+      //       no: 3,
+      //       nama: 'todo 3',
+      //       deskripsi: 'asal',
+      //     },
+      //   ]
+      // },
 
       editItem(item) {
         
