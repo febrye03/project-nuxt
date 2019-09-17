@@ -90,6 +90,9 @@ import { mapState, mapMutations } from 'vuex'
     },
 
     methods: {
+      ...mapMutations('todo', [
+      'deleteItem'
+      ]),
       // initialize () {
       //   this.items = [
       //     {
@@ -110,14 +113,10 @@ import { mapState, mapMutations } from 'vuex'
       //   ]
       // },
 
-      editItem(item) {
-        
-      },
-
-      deleteItem (item) {
-        const index = this.items.indexOf(item) 
-        confirm('Are you sure you want to delete this item?') && this.items.splice(index, 1)
-      },
+      // deleteItem (item) {
+      //   const index = this.items.indexOf(item) 
+      //   confirm('Are you sure you want to delete this item?') && this.items.splice(index, 1)
+      // },
     },
     layout:'ldashboard'
   }

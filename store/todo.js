@@ -38,6 +38,9 @@ export const mutations = {
         })
         state.items[idx].nama = namaEdit
         state.items[idx].deskripsi = deskripsiEdit
-
-    }
+    },
+    deleteItem(state) {
+        const index = state.items.indexOf(state)
+        confirm('Are you sure you want to delete this item?') && state.items.splice(index, 1)
+    },
 }
