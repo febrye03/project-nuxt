@@ -60,6 +60,8 @@ export default {
       const idx = this.items.findIndex((val) => {
         return val.no === parseInt(this.$route.params.no)
         })
+        
+      // console.log(this.items[idx].nama)
       this.namaEdit = this.items[idx].nama
       this.deskripsiEdit = this.items[idx].deskripsi
       },

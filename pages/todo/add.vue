@@ -69,7 +69,7 @@ export default {
       ]),
       save () {
         const payload = {
-          noTambah: (this.noTambah),
+          noTambah: parseInt(this.noTambah),
           namaTambah: (this.namaTambah),
           deskripsiTambah: (this.deskripsiTambah)
         }
