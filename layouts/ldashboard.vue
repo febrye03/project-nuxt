@@ -163,6 +163,10 @@ export default {
               {
                 title: 'todo',
                 to:'/todo'
+              },
+              {
+                title: 'pendaftaran',
+                to:'/pendaftaran'
               }
             ],
           },
